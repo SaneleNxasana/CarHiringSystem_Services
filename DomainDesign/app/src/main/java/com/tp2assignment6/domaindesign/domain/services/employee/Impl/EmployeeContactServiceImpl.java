@@ -13,6 +13,10 @@ import com.tp2assignment6.domaindesign.domain.services.employee.EmployeeContactS
 /**
  * Created by NXA-C.unltd on 2016/05/07.
  */
+
+//THIS IS AN INTENT SERVICE.
+//This service is not bound to any activity.
+
 public class EmployeeContactServiceImpl extends IntentService implements EmployeeContactService {
     private final EmployeeContactRepository repo;
 
@@ -57,11 +61,11 @@ public class EmployeeContactServiceImpl extends IntentService implements Employe
         if (intent != null){
             final String action = intent.getAction();
             if (ACTION_ADD.equals(action)){
-                intent.getSerializableExtra(EXTRA_ADD);
+                final EmployeeContact address = (EmployeeContact) intent.getSerializableExtra(EXTRA_ADD);
             }
             else
                 if (ACTION_UPDATE.equals(action)){
-                    intent.getSerializableExtra(EXTRA_UPDATE);
+                    final EmployeeContact address = (EmployeeContact) intent.getSerializableExtra(EXTRA_UPDATE);
                 }
         }
     }

@@ -13,6 +13,10 @@ import com.tp2assignment6.domaindesign.domain.services.vehicle.MinibusService;
 /**
  * Created by NXA-C.unltd on 2016/05/08.
  */
+
+//THIS IS AN INTENT SERVICE.
+//This service is not bound to any activity.
+
 public class MinibusServiceImpl extends IntentService implements MinibusService {
     private final MinibusRepository repo;
 

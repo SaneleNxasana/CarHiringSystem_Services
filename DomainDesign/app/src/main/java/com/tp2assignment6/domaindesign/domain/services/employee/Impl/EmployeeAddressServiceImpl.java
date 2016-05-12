@@ -13,12 +13,15 @@ import com.tp2assignment6.domaindesign.domain.services.employee.EmployeeAddressS
 /**
  * Created by NXA-C.unltd on 2016/05/07.
  */
+
+//THIS IS AN INTENT SERVICE.
+//This service is not bound to any activity.
+
 public class EmployeeAddressServiceImpl extends IntentService implements EmployeeAddressService {
     private final EmployeeAddressRepository repo;
 
     public static final String ACTION_ADD = "com.tp2assignment6.domaindesign.domain.services.employee.Impl.action.ADD";
     public static final String ACTION_UPDATE = "com.tp2assignment6.domaindesign.domain.services.employee.Impl.action.UPDATE";
-
     public static final String EXTRA_ADD = "com.tp2assignment6.domaindesign.domain.services.employee.Impl.extra.ADD";
     public static final String EXTRA_UPDATE = "com.tp2assignment6.domaindesign.domain.services.employee.Impl.extra.UPDATE";
 
@@ -56,11 +59,11 @@ public class EmployeeAddressServiceImpl extends IntentService implements Employe
         if (intent != null){
             final String action = intent.getAction();
             if (ACTION_ADD.equals(action)){
-                intent.getSerializableExtra(EXTRA_ADD);
+                final EmployeeAddress address = (EmployeeAddress) intent.getSerializableExtra(EXTRA_ADD);
             }
             else
                 if (ACTION_UPDATE.equals(action)){
-                    intent.getSerializableExtra(EXTRA_UPDATE);
+                    final EmployeeAddress address = (EmployeeAddress) intent.getSerializableExtra(EXTRA_UPDATE);
                 }
         }
     }

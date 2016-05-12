@@ -13,12 +13,15 @@ import com.tp2assignment6.domaindesign.domain.services.employee.BusinessAdminSer
 /**
  * Created by NXA-C.unltd on 2016/05/07.
  */
+
+//THIS IS AN INTENT SERVICE.
+//This service is not bound to any activity.
+
 public class BusinessAdminServiceImpl extends IntentService implements BusinessAdminService {
     private final BusinessAdminRepository repo;
 
     private static final String ACTION_ADD = "com.tp2assignment6.domaindesign.domain.services.employee.Impl.action.ADD";
     private static final String ACTION_RESET = "com.tp2assignment6.domaindesign.domain.services.employee.Impl.action.RESET";
-
     private static final String EXTRA_ADD = "com.tp2assignment6.domaindesign.domain.services.employee.Impl.extra.ADD";
 
     private static BusinessAdminServiceImpl service = null;

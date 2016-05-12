@@ -13,8 +13,14 @@ import com.tp2assignment6.domaindesign.domain.services.vehicle.CoupeService;
 /**
  * Created by NXA-C.unltd on 2016/05/08.
  */
+
+//THIS IS AN INTENT SERVICE.
+//This service is not bound to any activity.
+
 public class CoupeServiceImpl extends IntentService implements CoupeService {
     private final CoupeRepository repo;
+
+    public static final String EXTRA_ADD = "com.tp2assignment6.domaindesign.domain.services.vehicle.Impl.extra.ADD";
 
     private static CoupeServiceImpl service = null;
 
@@ -23,8 +29,6 @@ public class CoupeServiceImpl extends IntentService implements CoupeService {
             service = new CoupeServiceImpl();
         return service;
     }
-
-    private static final String EXTRA_ADD = "com.tp2assignment6.domaindesign.domain.services.vehicle.Impl.extra.ADD";
 
     private CoupeServiceImpl(){
         super("CoupeServiceImpl");

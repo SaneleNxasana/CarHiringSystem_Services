@@ -13,7 +13,6 @@ public class System implements Serializable{
     public System() {
     }
 
-
     public Long getIdNumber() {
         return idNumber;
     }

@@ -13,6 +13,10 @@ import com.tp2assignment6.domaindesign.domain.services.user.UserContactService;
 /**
  * Created by NXA-C.unltd on 2016/05/07.
  */
+
+//THIS IS AN INTENT SERVICE.
+//This service is not bound to any activity.
+
 public class UserContactServiceImpl extends IntentService implements UserContactService {
     private final UserContactRepository repo;
 
@@ -40,13 +44,11 @@ public class UserContactServiceImpl extends IntentService implements UserContact
         if (intent != null){
             final String action = intent.getAction();
             if (ACTION_ADD.equals(action)){
-                /*final UserContact userContact = (UserContact) */ intent.getSerializableExtra(EXTRA_ADD);
-                //postContact(userContact);
+                final UserContact userContact = (UserContact) intent.getSerializableExtra(EXTRA_ADD);
             }
             else
                 if (ACTION_UPDATE.equals(action)){
-                    /*final UserContact userContact = (UserContact) */ intent.getSerializableExtra(EXTRA_UPDATE);
-                    //updateContact(userContact);
+                    final UserContact userContact = (UserContact) intent.getSerializableExtra(EXTRA_UPDATE);
                 }
         }
     }

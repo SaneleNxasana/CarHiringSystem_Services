@@ -13,6 +13,10 @@ import com.tp2assignment6.domaindesign.domain.services.employee.SiteManagerServi
 /**
  * Created by NXA-C.unltd on 2016/05/07.
  */
+
+//THIS IS AN INTENT SERVICE.
+//This service is not bound to any activity.
+
 public class SiteManagerServiceImpl extends IntentService implements SiteManagerService {
     private final SiteManagerRepository repo;
 
